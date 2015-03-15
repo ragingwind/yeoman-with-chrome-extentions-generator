@@ -1,0 +1,69 @@
+/**
+ * GDG(google developer group) theme for reveal.js.
+ * 
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../../lib/font/league_gothic-webfont.eot');
+    src: url('../../lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/league_gothic-webfont.woff') format('woff'),
+         url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
+         url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+
+// Override theme settings (see ../template/settings.scss)
+$mainColor: #333;
+$headingColor: #333;
+$headingTextShadow: none;
+//$backgroundColor: #f7f3de;
+$backgroundColor: #ffffff;
+$linkColor: #8b743d;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(79, 64, 28, 0.99);
+$heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+
+// Background generator
+@mixin backgroundShorthandWithExternalVar($filename,$position:0 0,$repeat: no-repeat) {
+    background: {
+        image:url(#{$filename});
+        repeat:$repeat;
+        position: $position;
+        size: 200px 35px
+    };
+}
+
+@mixin bodyBackground() {
+    background: {
+        image:url('https://lh5.googleusercontent.com/-075wUs33feI/UDTgY7GJxAI/AAAAAAAAHzE/VNVohWaO5ug/s1600/Screen+Shot+2012-08-22+at+10.35.38+PM.png');
+        repeat: no-repeat;
+        position: 10px 98%;
+        size: 200px 35px
+    };
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+h1 {
+    background-image:url('http://yeoman.io/assets/img/yeoman-logo.png');
+    background-repeat:no-repeat;
+    background-position:left top;
+}
